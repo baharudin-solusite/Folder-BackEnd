@@ -19,6 +19,11 @@ create table books (
     creation_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL
 );
 -- Pada suatu waktu, kamu harus mengupdate column dari table books yang sudah ada. Berikut update yang harus dilakukan:
+SELECT * FROM books;
+ALTER TABLE books
+	ADD price INT DEFAULT 0,
+	ADD `status` ENUM('available', 'out of stock', 'limited'),
+	DROP place_sell;
 
 -- INSERT 3 data untuk semua column yang ada pada table books
 
