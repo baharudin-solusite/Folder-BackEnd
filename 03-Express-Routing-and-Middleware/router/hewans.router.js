@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router()
 
-const { getAllHewan, getHewanByID, addHewan } = require('../controllers/hewans.controller');
+const { getAllHewan, getHewanByID, addHewan, deleteHewan, updateHewan } = require('../controllers/hewans.controller');
 
 // app diganti router
 // /movies nya dihapus
@@ -16,6 +16,10 @@ const khususPOST = (req, res, next) => {
 }
 
 router.post("/", khususPOST, addHewan)
+
+router.put("/:id", updateHewan)
+
+router.delete("/:id", deleteHewan)
 
 // PUT /movies/:id - update by ID
 
